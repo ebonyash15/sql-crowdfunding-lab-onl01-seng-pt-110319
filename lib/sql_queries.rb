@@ -24,11 +24,11 @@ end
 
 def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_funding_goal
   "Select projects.title, (Sum(Pledges.amount)-Projects.funding_goal)
+  Where amount >=0
   From projects
   Inner Join pledges
   On Projects.id = Pledges.project_id
   Group By Projects.title
-  Where amount >=0
   Order by amount"
 end
 
