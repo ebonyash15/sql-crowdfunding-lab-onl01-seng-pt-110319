@@ -27,6 +27,7 @@ def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_
   From projects
   Inner Join pledges
   On Projects.id = Pledges.project_id
+  Where amount >=0
   Group By Projects.title
   Order by amount"
 end
