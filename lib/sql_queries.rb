@@ -19,11 +19,18 @@ def selects_the_user_name_age_and_pledge_amount_for_all_pledges_alphabetized_by_
   From pledges
   Inner Join users
   On Users.id = Pledges.user_id
-  GRoup by Users.name, Pledges.user_id"
+  Group by Users.name, Pledges.user_id"
 end
 
 def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_funding_goal
-  "Write your SQL query Here"
+  "Select projects.title, Sum(DISTINCT Pledges.amount)-Projects.funidng_goal
+  From projects
+# Inner Join pledges
+#  On Projects.id = Pledges.project_id
+#  Group By Projects.title
+  WHERE pledges.project_id = projects.id GROUP BY Projects.title 
+HAVING projects.id = pledges.project_id ORDER BY SUM(amount), 
+Projects.funding_goal > -1"
 end
 
 def selects_user_names_and_amounts_of_all_pledges_grouped_by_name_then_orders_them_by_the_summed_amount
