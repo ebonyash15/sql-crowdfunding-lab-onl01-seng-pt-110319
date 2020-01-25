@@ -28,8 +28,8 @@ def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_
 # Inner Join pledges
 #  On Projects.id = Pledges.project_id
 #  Group By Projects.title
-  WHERE pledges.project_id = projects.id GROUP BY Projects.title 
-HAVING projects.id = pledges.project_id ORDER BY SUM(amount), 
+  WHERE pledges.project_id = projects.id GROUP BY Projects.title
+HAVING projects.id = pledges.project_id ORDER BY SUM(amount),
 Projects.funding_goal > -1"
 end
 
