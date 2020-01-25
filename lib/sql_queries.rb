@@ -23,7 +23,7 @@ def selects_the_user_name_age_and_pledge_amount_for_all_pledges_alphabetized_by_
 end
 
 def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_funding_goal
-  "Select projects.title, Sum(DISTINCT Pledges.amount)-Projects.funidng_goal
+  "Select projects.title, Sum(DISTINCT Pledges.amount)-Projects.funding_goal
   From projects
   WHERE pledges.project_id = projects.id GROUP BY Projects.title
 HAVING projects.id = pledges.project_id ORDER BY SUM(amount),
