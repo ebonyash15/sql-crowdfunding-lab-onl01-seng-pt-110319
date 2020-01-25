@@ -16,8 +16,8 @@ end
 
 def selects_the_user_name_age_and_pledge_amount_for_all_pledges_alphabetized_by_name
   "Select Users.name, Pledges.amount
-  From Users
-  Inner Join pledges
+  From pledges
+  Left Outer Join users
   On Users.id = Pledges.user_id
   Order by Users.name"
 end
